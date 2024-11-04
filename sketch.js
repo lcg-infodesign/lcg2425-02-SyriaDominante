@@ -3,7 +3,7 @@ function preload() {
 }
 
 // costanti e variabili
-const CRYSTAL_SIZE = 60;
+const CRYSTAL_SIZE = 80;
 let SIDES;
 let PALETTE = [];
 const cols = 5; // numero di colonne griglia
@@ -12,7 +12,7 @@ const rows = 4; // righe
 function setup() {
   createCanvas(windowWidth, windowHeight);
 
-  SIDES = floor(random(1, 10)); // numero casuale di lati
+  SIDES = floor(random(5, 10)); // numero casuale di lati
 
   PALETTE = [
     color(210, 90, 195), // rosa
@@ -52,7 +52,7 @@ function testLines(x, y) {
   if (rando > 0.5) {
     numShapes = SIDES;
   } else {
-    numShapes = SIDES * floor(random(1, 10));
+    numShapes = SIDES * floor(random(5, 10));
   }
 
   const rando2 = floor(random(0, PALETTE.length));
@@ -84,7 +84,7 @@ function testLines(x, y) {
   if (random(1) > 0.3) { // probabilità di apparizione del triangolo --> + del 50%(0.5)
     const triangleSize = CRYSTAL_SIZE * 0.7; // per avere il triangolo inscritto nel cerchio
     push();
-    rotate(random(360)); // Ruota il triangolo di un angolo casuale
+    rotate(random(360)); // ruota il triangolo di un angolo casuale
     beginShape();
     for (let i = 0; i < 3; i++) {
       const angle = map(i, 0, 3, 0, 360);
